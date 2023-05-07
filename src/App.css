@@ -498,3 +498,438 @@ html {
   padding-top: 10px;
   list-style: none;
 }
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    display: flex;
+    /* flex-direction: column; */
+    padding: 16px 1rem;
+  }
+
+  .logo a {
+    width: 12rem;
+    cursor: pointer;
+  }
+
+  .links ul {
+    /* display: flex; */
+    visibility: hidden;
+    /* flex-direction: column; */
+  }
+
+  /* .links {
+    width: 40%;
+  } */
+
+  /* .links ul {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2px;
+  } */
+
+  .reg-btn {
+    position: relative;
+    top: 0;
+  }
+
+  .reg-btn a button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .home {
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .home-txt {
+    width: 90%;
+  }
+
+  .heading {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .pin {
+    padding: 10px 10px;
+    width: 2.8rem;
+    margin-right: 0.2rem;
+  }
+
+  .src-txt {
+    padding: 10px 10px;
+    width: 12rem;
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+  }
+
+  .src-txt {
+    border-radius: 10px;
+    text-align: start;
+  }
+
+  .src-icon {
+    width: 0;
+    padding: 0;
+    font-size: 0;
+    box-shadow: 0;
+    border-radius: 0;
+    margin-right: 0;
+    background: transparent;
+    visibility: hidden;
+  }
+
+  .bars {
+    margin-left: 0;
+    padding: 13px 15px;
+    position: relative;
+    top: 1.5px;
+  }
+
+  .types {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 2rem;
+    position: relative;
+    top: -2rem;
+    justify-content: space-between;
+  }
+
+  .t-1,
+  .t-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .t-1 div,
+  .t-2 div {
+    width: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .t-1 div:last-child,
+  .t-2 div:last-child {
+    margin-bottom: 0;
+  }
+
+  .t-1 {
+    margin-bottom: 0;
+  }
+
+  .petcare {
+    margin-top: 0rem;
+    padding-top: 4rem;
+  }
+
+  .petcare,
+  .eldercare {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pc-img1 {
+    width: 8rem;
+  }
+
+  .pc-img2 img {
+    width: 0rem;
+    /* visibility: hidden; */
+  }
+
+  .pc-txt {
+    width: 70%;
+    text-align: center;
+    height: max-content;
+    margin: auto;
+  }
+
+  .pc-txt h3,
+  .ld-txt h3,
+  .ec-txt h3,
+  .wh-txt h3,
+  .cl-txt h3,
+  .ck-txt h3 {
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .pc-txt p,
+  .ld-txt p,
+  .wh-txt p,
+  .ck-txt p {
+    width: 70%;
+    font-size: 1rem;
+  }
+
+  .book-btn a button {
+    margin-top: 1rem;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .box-1 {
+    width: 6rem;
+    top: -16rem;
+  }
+
+  .laundry {
+    margin-top: -2rem;
+    flex-direction: row-reverse;
+  }
+
+  .ld-txt {
+    width: 70%;
+    text-align: center;
+  }
+
+  .ld-img1 {
+    width: 30%;
+  }
+
+  .ld-img1 img {
+    padding-right: 0;
+    position: relative;
+    top: 0;
+    left: -4rem;
+  }
+
+  .eldercare {
+    margin-top: 6rem;
+  }
+
+  .ec-txt {
+    width: 800rem;
+    position: relative;
+    left: -2rem;
+    text-align: center;
+    height: max-content;
+    margin: auto;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #6b7478;
+  }
+
+  .ec-img1 img {
+    width: 40rem;
+    position: relative;
+    top: -4rem;
+  }
+
+  .ec-img2 img {
+    width: 200rem;
+  }
+
+  .ec-img2 {
+    margin-right: 0rem;
+  }
+
+  .ec-txt p {
+    width: 80%;
+    margin: auto;
+  }
+
+  /*Here*/
+  .eldercare {
+    margin-top: 6rem;
+  }
+
+  .ec-txt {
+    text-align: center;
+    height: max-content;
+    margin: auto;
+    font-weight: 300;
+    color: #6b7478;
+    margin-left: 1rem;
+  }
+
+  .ec-img1 img {
+    float: left;
+    width: 200rem;
+    position: relative;
+    top: -4rem;
+  }
+
+  .ec-img2 img {
+    float: right;
+    width: 300rem;
+  }
+
+  .ec-img2 {
+    margin-right: 0rem;
+  }
+
+  .ec-txt p {
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  .washing {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .whtop {
+    display: flex;
+    padding: 4rem;
+    justify-content: space-between;
+  }
+
+  .wh-txt {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .wh-btn {
+    text-align: center;
+  }
+
+  .cleaning {
+    margin-top: -22rem;
+    display: flex;
+    width: 100%;
+  }
+
+  .cl-img1 img {
+    width: 100rem;
+  }
+
+  .cl-img2 img {
+    width: 140rem;
+  }
+
+  .cl-txt {
+    text-align: center;
+    margin: auto;
+  }
+
+  .cl-txt p {
+    margin: auto;
+    font-weight: 300;
+    font-size: 2rem;
+    color: #6b7478;
+  }
+
+  .box-2 {
+    display: block;
+    width: 18rem;
+    position: relative;
+    margin-left: auto;
+    top: -8rem;
+    z-index: -1;
+  }
+
+  .cooking {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 14rem;
+  }
+
+  .ck-img1 {
+    width: 40rem;
+  }
+
+  .ck-img1 img {
+    position: relative;
+    margin-top: -14rem;
+  }
+
+  .ck-img2 img {
+    width: 40rem;
+    margin-right: 2rem;
+  }
+
+  .ck-txt {
+    text-align: center;
+    width: 70vw;
+    position: relative;
+    margin-left: -6rem;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .ck-txt p {
+    width: 80%;
+  }
+
+  .footer {
+    height: 16rem;
+    position: relative;
+    display: flex;
+    width: 100%;
+    background: #ffbb7a;
+    color: #ffffff;
+    padding-left: 6rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    justify-content: space-between;
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .qr {
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .qr img {
+    padding-right: 5px;
+  }
+
+  .logo-2 {
+    display: flex;
+  }
+
+  .qr-txt {
+    padding-left: 10px;
+    border-left: 1px solid #ffffff;
+    margin: auto 0;
+  }
+
+  .logo-2 img {
+    width: 1.4rem;
+    height: 1.6rem;
+    padding-top: 6px;
+    padding-right: 6px;
+  }
+
+  .soc-lnk {
+    padding-top: 10px;
+    display: flex;
+    font-size: xx-large;
+    color: #ffffff;
+    justify-content: space-around;
+  }
+
+  .services h3,
+  .trust h3,
+  .contact h3,
+  .faq h3 {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .services ul li,
+  .trust ul li,
+  .contact p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    padding-top: 10px;
+    list-style: none;
+  }
+}

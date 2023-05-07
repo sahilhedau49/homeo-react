@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import Fade from "react-reveal/Fade";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <nav>
         <div className="navbar">
           <div className="logo">
-            <a href="#">
+            <a href="/">
               <img src={require("../images/Group19.png")} alt="vector" />
               <h3>Homeo</h3>
             </a>
