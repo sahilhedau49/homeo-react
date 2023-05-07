@@ -7,6 +7,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   position: fixed;
   width: 100%;
@@ -19,17 +23,17 @@
   z-index: 99;
 }
 
-.logo {
+.logo a {
   width: 12rem;
   cursor: pointer;
 }
 
-.logo,
+.logo a,
 .links ul {
   display: flex;
 }
 
-.logo h3 {
+.logo a h3 {
   padding-top: 2px;
   font-weight: 700;
   font-size: 1.2rem;
@@ -37,7 +41,7 @@
   text-transform: uppercase;
 }
 
-.logo img {
+.logo a img {
   width: 1.4rem;
   height: 1.6rem;
   padding-top: 6px;
@@ -208,6 +212,7 @@
 
 .petcare {
   margin-top: -8rem;
+  padding-top: 3rem;
 }
 
 .petcare,
