@@ -146,6 +146,9 @@ html {
 
 .src-icon {
   width: 3rem;
+  position: relative;
+  top: 2px;
+  height: 100%;
   padding: 18px 10px;
   font-size: large;
   box-shadow: 0px 4px 50px rgba(64, 123, 255, 0.35);
@@ -180,7 +183,7 @@ html {
   margin-right: auto;
   position: relative;
   text-align: center;
-  top: -10rem;
+  top: -12rem;
   color: #8f90a6;
 }
 
@@ -197,17 +200,17 @@ html {
 
 .t-1 div img,
 .t-2 div img {
-  width: 3.4rem;
+  width: 4rem;
   margin: auto;
 }
 
 .t-1 div p,
 .t-2 div p {
-  font-size: smaller;
+  font-size: large;
 }
 
 .t-1 {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .petcare {
@@ -224,7 +227,7 @@ html {
 
 .pc-img1 img,
 .pc-img2 img {
-  width: 20rem;
+  width: 24rem;
 }
 
 .pc-txt {
@@ -235,21 +238,9 @@ html {
   margin-bottom: auto;
 }
 
-.pc-txt h3,
-.ld-txt h3,
-.ec-txt h3,
-.wh-txt h3,
-.cl-txt h3,
-.ck-txt h3 {
-  font-weight: 700;
-  font-size: 2.2rem;
-  line-height: 54px;
-  color: #263238;
-}
-
 .pc-txt p,
 .ck-txt p {
-  width: 70%;
+  width: 60%;
   margin: auto;
   font-weight: 300;
   font-size: 2rem;
@@ -289,7 +280,7 @@ html {
 .laundry {
   display: flex;
   width: 100%;
-  margin-top: -12rem;
+  margin-top: -10rem;
 }
 
 .ld-txt {
@@ -297,7 +288,7 @@ html {
 }
 
 .ld-txt p {
-  width: 70%;
+  width: 50%;
   margin: auto;
   font-weight: 300;
   font-size: 2rem;
@@ -305,10 +296,14 @@ html {
 }
 
 .ld-img1 {
-  width: 60rem;
+  width: 50rem;
   position: relative;
-  top: -3rem;
+  top: -5rem;
   margin-right: 3rem;
+}
+
+.ld-img1 img {
+  width: 44rem;
 }
 
 .eldercare {
@@ -327,7 +322,8 @@ html {
 }
 
 .ec-img1 img {
-  width: 20rem;
+  width: 24rem;
+  z-index: -10;
 }
 
 .ec-img2 img {
@@ -339,11 +335,11 @@ html {
 }
 
 .Blank {
-  width: 40%;
+  width: 30%;
 }
 
 .ec-txt p {
-  width: 80%;
+  width: 60%;
   margin: auto;
 }
 
@@ -361,13 +357,17 @@ html {
 }
 
 .wh-txt {
-  width: 55%;
+  width: 70%;
   text-align: center;
   margin: auto;
 }
 
+.wh-img1 img {
+  width: 50rem;
+}
+
 .wh-txt p {
-  width: 70%;
+  width: 60%;
   margin: auto;
   font-weight: 300;
   font-size: 2rem;
@@ -386,6 +386,7 @@ html {
 
 .cl-img1 img {
   width: 100rem;
+  z-index: 99;
 }
 
 .cl-img2 img {
@@ -441,7 +442,7 @@ html {
 }
 
 .ck-txt p {
-  width: 80%;
+  width: 70%;
 }
 
 .footer {
@@ -516,6 +517,19 @@ html {
   list-style: none;
 }
 
+.pc-txt h3,
+.ld-txt h3,
+.ec-txt h3,
+.wh-txt h3,
+.cl-txt h3,
+.ck-txt h3 {
+  font-weight: bolder;
+  font-size: 2.2rem;
+  line-height: 54px;
+  color: #263238;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 900px) {
   .navbar {
     display: flex;
@@ -568,7 +582,7 @@ html {
   .heading {
     font-size: 1.4rem;
     margin-bottom: 2rem;
-    text-shadow: 2px 2px 5px #222;
+    text-shadow: 1px 1px 10px #222;
   }
 
   .pin {
@@ -627,6 +641,12 @@ html {
   .t-1 div,
   .t-2 div {
     width: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .t-1 div img,
+  .t-2 div img {
+    width: 3rem;
     margin-bottom: 2rem;
   }
 
@@ -783,6 +803,7 @@ html {
     padding: 1rem;
     justify-content: space-between;
     flex-direction: row-reverse;
+    overflow-x: hidden;
   }
 
   .wh-img1 {
@@ -833,106 +854,78 @@ html {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
 
   .ck-img1 {
-    width: 40rem;
+    width: 100vw;
   }
 
   .ck-img1 img {
     position: relative;
     margin-top: -6rem;
-    width: 10rem;
+    width: 8rem;
+  }
+
+  .ck-img2 {
+    overflow-x: hidden;
   }
 
   .ck-img2 img {
     width: 10rem;
-    margin-right: 0rem;
+    position: relative;
+    right: -2rem;
   }
 
   .ck-txt {
     text-align: center;
     width: 70vw;
     position: relative;
-    margin-left: -6rem;
+    margin-left: -3rem;
     margin-top: auto;
     margin-bottom: auto;
   }
 
   .ck-txt p {
-    width: 80%;
+    width: 100%;
   }
 
   .footer {
-    height: 16rem;
+    height: fit-content;
     position: relative;
     display: flex;
-    width: 100%;
-    background: #ffbb7a;
-    color: #ffffff;
-    padding-left: 6rem;
+    flex-direction: column;
+    padding-left: 2rem;
     padding-right: 2rem;
-    padding-top: 3rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
-    justify-content: space-between;
   }
 
   .social {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .qr {
-    display: flex;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ffffff;
-  }
-
-  .qr img {
-    padding-right: 5px;
-  }
-
-  .logo-2 {
-    display: flex;
-  }
-
-  .qr-txt {
-    padding-left: 10px;
-    border-left: 1px solid #ffffff;
-    margin: auto 0;
-  }
-
-  .logo-2 img {
-    width: 1.4rem;
-    height: 1.6rem;
-    padding-top: 6px;
-    padding-right: 6px;
-  }
-
-  .soc-lnk {
-    padding-top: 10px;
-    display: flex;
-    font-size: xx-large;
-    color: #ffffff;
-    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 3rem;
   }
 
   .services h3,
   .trust h3,
   .contact h3,
   .faq h3 {
-    font-weight: 700;
-    font-size: 1.2rem;
+    margin-top: 1rem;
   }
 
   .services ul li,
   .trust ul li,
   .contact p {
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-top: 10px;
+    line-height: 1rem;
     list-style: none;
+  }
+
+  .faq {
+    margin-bottom: 9rem;
   }
 }

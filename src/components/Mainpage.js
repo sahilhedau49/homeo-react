@@ -124,7 +124,7 @@ const Mainpage = () => {
           <div className="eldercare">
             <span className="Blank"></span>
             <div className="ec-txt">
-              <h3>Elder’s Caretaking</h3>
+              <h3 className="ec-head">Elder's Caretaking</h3>
               <p>
                 Our old age care taking services provide compassionate and
                 personalized support to seniors who require assistance with
