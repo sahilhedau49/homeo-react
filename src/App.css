@@ -224,14 +224,15 @@ html {
 
 .pc-img1 img,
 .pc-img2 img {
-  width: 18rem;
+  width: 20rem;
 }
 
 .pc-txt {
   width: 50%;
   text-align: center;
   height: max-content;
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .pc-txt h3,
@@ -247,8 +248,6 @@ html {
 }
 
 .pc-txt p,
-.ld-txt p,
-.wh-txt p,
 .ck-txt p {
   width: 70%;
   margin: auto;
@@ -258,7 +257,7 @@ html {
 }
 
 .book-btn a button {
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding: 5px 30px;
   background: #ffbb7a;
   border-radius: 8px;
@@ -294,18 +293,26 @@ html {
 }
 
 .ld-txt {
-  width: 55%;
   text-align: center;
 }
 
+.ld-txt p {
+  width: 70%;
+  margin: auto;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #6b7478;
+}
+
 .ld-img1 {
-  width: 40rem;
+  width: 60rem;
   position: relative;
   top: -3rem;
+  margin-right: 3rem;
 }
 
 .eldercare {
-  margin-top: 6rem;
+  margin-top: -34rem;
 }
 
 .ec-txt {
@@ -315,20 +322,24 @@ html {
   font-weight: 300;
   font-size: 2rem;
   color: #6b7478;
+  position: relative;
+  left: 4rem;
 }
 
 .ec-img1 img {
-  width: 54rem;
-  position: relative;
-  top: -4rem;
+  width: 20rem;
 }
 
 .ec-img2 img {
-  width: 54rem;
+  width: 62rem;
 }
 
 .ec-img2 {
   margin-right: 2rem;
+}
+
+.Blank {
+  width: 40%;
 }
 
 .ec-txt p {
@@ -345,13 +356,22 @@ html {
 .whtop {
   display: flex;
   padding: 4rem;
+  padding-bottom: 2rem;
   justify-content: space-between;
 }
 
 .wh-txt {
-  width: 60%;
+  width: 55%;
   text-align: center;
   margin: auto;
+}
+
+.wh-txt p {
+  width: 70%;
+  margin: auto;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #6b7478;
 }
 
 .wh-btn {
@@ -397,16 +417,15 @@ html {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  margin-top: 14rem;
+  margin-top: -24rem;
+}
+
+.Blank2 {
+  width: 25%;
 }
 
 .ck-img1 {
-  width: 40rem;
-}
-
-.ck-img1 img {
-  position: relative;
-  margin-top: -14rem;
+  width: 30rem;
 }
 
 .ck-img2 img {
@@ -417,8 +436,6 @@ html {
 .ck-txt {
   text-align: center;
   width: 70vw;
-  position: relative;
-  margin-left: -6rem;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -502,12 +519,13 @@ html {
 @media screen and (max-width: 600px) {
   .navbar {
     display: flex;
+    width: 100vw;
     /* flex-direction: column; */
     padding: 16px 1rem;
   }
 
   .logo a {
-    width: 12rem;
+    width: 10rem;
     cursor: pointer;
   }
 
@@ -517,9 +535,9 @@ html {
     /* flex-direction: column; */
   }
 
-  /* .links {
-    width: 40%;
-  } */
+  .links {
+    width: 0;
+  }
 
   /* .links ul {
     display: flex;
@@ -550,6 +568,7 @@ html {
   .heading {
     font-size: 1.4rem;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px #222;
   }
 
   .pin {
@@ -621,7 +640,7 @@ html {
   }
 
   .petcare {
-    margin-top: 0rem;
+    margin-top: 2rem;
     padding-top: 4rem;
   }
 
@@ -633,7 +652,7 @@ html {
   }
 
   .pc-img1 {
-    width: 8rem;
+    width: 7rem;
   }
 
   .pc-img2 img {
@@ -655,8 +674,8 @@ html {
   .cl-txt h3,
   .ck-txt h3 {
     font-weight: 900;
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 1.2rem;
+    line-height: 1rem;
     margin-bottom: 1rem;
   }
 
@@ -664,111 +683,93 @@ html {
   .ld-txt p,
   .wh-txt p,
   .ck-txt p {
-    width: 70%;
+    width: 90%;
     font-size: 1rem;
   }
 
   .book-btn a button {
     margin-top: 1rem;
     padding: 5px 10px;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 
   .box-1 {
     width: 6rem;
-    top: -16rem;
+    top: -18rem;
   }
 
   .laundry {
-    margin-top: -2rem;
+    margin-top: -4rem;
     flex-direction: row-reverse;
   }
 
   .ld-txt {
-    width: 70%;
+    width: 100%;
     text-align: center;
+    margin-left: -3rem;
+  }
+
+  .ld-txt p {
+    width: 90%;
+    margin: auto;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #6b7478;
   }
 
   .ld-img1 {
-    width: 30%;
+    width: 20rem;
+    position: relative;
+    top: 0;
+    margin-right: 1rem;
+    left: -3rem;
   }
 
   .ld-img1 img {
-    padding-right: 0;
-    position: relative;
-    top: 0;
-    left: -4rem;
-  }
-
-  .eldercare {
-    margin-top: 6rem;
-  }
-
-  .ec-txt {
-    width: 800rem;
-    position: relative;
-    left: -2rem;
-    text-align: center;
-    height: max-content;
-    margin: auto;
-    font-weight: 300;
-    font-size: 1rem;
-    color: #6b7478;
-  }
-
-  .ec-img1 img {
     width: 40rem;
-    position: relative;
-    top: -4rem;
   }
 
-  .ec-img2 img {
-    width: 200rem;
-  }
-
-  .ec-img2 {
-    margin-right: 0rem;
-  }
-
-  .ec-txt p {
-    width: 80%;
-    margin: auto;
-  }
-
-  /*Here*/
   .eldercare {
-    margin-top: 6rem;
+    margin-top: 0rem;
   }
 
   .ec-txt {
+    width: 100%;
+    position: relative;
+    left: 0;
     text-align: center;
     height: max-content;
     margin: auto;
     font-weight: 300;
+    font-size: 1rem;
     color: #6b7478;
-    margin-left: 1rem;
   }
 
   .ec-img1 img {
-    float: left;
-    width: 200rem;
+    width: 6.4rem;
     position: relative;
-    top: -4rem;
+    top: -2rem;
   }
 
   .ec-img2 img {
-    float: right;
-    width: 300rem;
+    width: 10rem;
   }
 
   .ec-img2 {
     margin-right: 0rem;
   }
 
-  .ec-txt p {
-    font-size: 1rem;
-    width: 80%;
+  .Blank {
+    width: 0;
   }
+
+  .ec-txt p {
+    width: 95%;
+    margin: auto;
+    font-size: 1rem;
+  }
+
+  /*Left Here*/
 
   .washing {
     display: flex;

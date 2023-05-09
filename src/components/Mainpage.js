@@ -83,13 +83,13 @@ const Mainpage = () => {
               />
             </div>
           </div>
-          <img
-            className="box-1"
-            src={require("../images/Group 17.png")}
-            alt="boxes"
-          />
         </section>
       </Fade>
+      <img
+        className="box-1"
+        src={require("../images/Group 17.png")}
+        alt="boxes"
+      />
 
       <Fade bottom>
         <section>
@@ -116,15 +116,13 @@ const Mainpage = () => {
         </section>
       </Fade>
 
+      <div className="ec-img1">
+        <img src={require("../images/Group 996 (1).png")} alt="Boy with dogs" />
+      </div>
       <Fade bottom>
         <section>
           <div className="eldercare">
-            <div className="ec-img1">
-              <img
-                src={require("../images/Group 996 (1).png")}
-                alt="Boy with dogs"
-              />
-            </div>
+            <span className="Blank"></span>
             <div className="ec-txt">
               <h3>Elder’s Caretaking</h3>
               <p>
@@ -169,14 +167,14 @@ const Mainpage = () => {
                 <button>Book Now</button>
               </a>
             </div>
-            <img
-              className="box-2"
-              src={require("../images/Group 17 (1).png")}
-              alt="boxes"
-            />
           </div>
         </section>
       </Fade>
+      <img
+        className="box-2"
+        src={require("../images/Group 17 (1).png")}
+        alt="boxes"
+      />
 
       <Fade bottom>
         <section>
@@ -211,15 +209,13 @@ const Mainpage = () => {
         </section>
       </Fade>
 
+      <div className="ck-img1">
+        <img src={require("../images/Group 998.png")} alt="Boy with dogs" />
+      </div>
       <Fade bottom>
         <section>
           <div className="cooking">
-            <div className="ck-img1">
-              <img
-                src={require("../images/Group 998.png")}
-                alt="Boy with dogs"
-              />
-            </div>
+            <span className="Blank2"></span>
             <div className="ck-txt">
               <h3>Cooking Services</h3>
               <p>
