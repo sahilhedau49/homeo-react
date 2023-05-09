@@ -37,33 +37,33 @@ const Header = () => {
         </div>
       </nav>
 
-      <Fade bottom>
-        <section className="home">
-          <div className="home-txt">
-            <div className="heading">
-              <h3>Compassionate Care and Home Services</h3>
-            </div>
-            <div className="search">
-              <input
-                className="pin"
-                type="text"
-                placeholder="PIN CODE"
-                name="pincode"
-              />
-              <span>
-                <i className="fa-solid fa-magnifying-glass src-icon"></i>
-              </span>
-              <input
-                className="src-txt"
-                type="text"
-                placeholder="Search for Service ..."
-                name="search"
-              />
-              <i className="bars fa-solid fa-bars"></i>
-            </div>
+      {/* <Fade bottom> */}
+      <section className="home">
+        <div className="home-txt">
+          <div className="heading">
+            <h3>Compassionate Care and Home Services</h3>
           </div>
-        </section>
-      </Fade>
+          <div className="search">
+            <input
+              className="pin"
+              type="text"
+              placeholder="PIN CODE"
+              name="pincode"
+            />
+            <span>
+              <i className="fa-solid fa-magnifying-glass src-icon"></i>
+            </span>
+            <input
+              className="src-txt"
+              type="text"
+              placeholder="Search for Service ..."
+              name="search"
+            />
+            <i className="bars fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </section>
+      {/* </Fade> */}
     </div>
   );
 };

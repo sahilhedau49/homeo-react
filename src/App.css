@@ -516,7 +516,7 @@ html {
   list-style: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .navbar {
     display: flex;
     width: 100vw;
@@ -775,18 +775,25 @@ html {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 3rem;
   }
 
   .whtop {
     display: flex;
-    padding: 4rem;
+    padding: 1rem;
     justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+
+  .wh-img1 {
+    width: 14rem;
+    margin-right: -2rem;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .wh-txt {
-    width: 60%;
-    text-align: center;
-    margin: auto;
+    width: 70%;
   }
 
   .wh-btn {
@@ -794,34 +801,28 @@ html {
   }
 
   .cleaning {
-    margin-top: -22rem;
-    display: flex;
-    width: 100%;
+    margin-top: -7rem;
   }
 
   .cl-img1 img {
-    width: 100rem;
+    width: 80rem;
   }
 
   .cl-img2 img {
-    width: 140rem;
+    width: 0;
   }
 
   .cl-txt {
-    text-align: center;
-    margin: auto;
+    margin-right: 1rem;
   }
 
   .cl-txt p {
-    margin: auto;
-    font-weight: 300;
-    font-size: 2rem;
-    color: #6b7478;
+    font-size: 1rem;
   }
 
   .box-2 {
     display: block;
-    width: 18rem;
+    width: 8rem;
     position: relative;
     margin-left: auto;
     top: -8rem;
@@ -832,7 +833,7 @@ html {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin-top: 14rem;
+    margin-top: 4rem;
   }
 
   .ck-img1 {
@@ -841,12 +842,13 @@ html {
 
   .ck-img1 img {
     position: relative;
-    margin-top: -14rem;
+    margin-top: -6rem;
+    width: 10rem;
   }
 
   .ck-img2 img {
-    width: 40rem;
-    margin-right: 2rem;
+    width: 10rem;
+    margin-right: 0rem;
   }
 
   .ck-txt {
