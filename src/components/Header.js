@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import Fade from "react-reveal/Fade";
+import { CgMenu, CgClose } from "react-icons/cg";
 
 const Header = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <div>
       <nav>
@@ -13,19 +16,28 @@ const Header = () => {
               <h3>Homeo</h3>
             </a>
           </div>
-          <div className="links">
-            <ul>
+          <div className="links ">
+            <ul className={openMenu ? "active" : ""}>
+              {/* Active */}
               <li>
-                <a href="#">Home</a>
+                <a href="#" onClick={() => setOpenMenu(false)}>
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#services">Services</a>
+                <a href="#services" onClick={() => setOpenMenu(false)}>
+                  Services
+                </a>
               </li>
               <li>
-                <a href="#contact">Help</a>
+                <a href="#contact" onClick={() => setOpenMenu(false)}>
+                  Help
+                </a>
               </li>
               <li>
-                <a href="#contact">About</a>
+                <a href="#contact" onClick={() => setOpenMenu(false)}>
+                  About
+                </a>
               </li>
             </ul>
           </div>
@@ -33,6 +45,21 @@ const Header = () => {
             <a href="#">
               <button>Registration</button>
             </a>
+          </div>
+          <div
+            className={openMenu ? "mobile-menu-btn active" : "mobile-menu-btn"}
+          >
+            {/* Active */}
+            <CgMenu
+              name="menu-outline"
+              className="mobile-nav-icons"
+              onClick={() => setOpenMenu(true)}
+            />
+            <CgClose
+              name="close-outline"
+              className="close-outline mobile-nav-icons"
+              onClick={() => setOpenMenu(false)}
+            />
           </div>
         </div>
       </nav>

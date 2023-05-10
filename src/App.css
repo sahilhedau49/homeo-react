@@ -23,6 +23,10 @@ html {
   z-index: 99;
 }
 
+.mobile-menu-btn {
+  display: none;
+}
+
 .logo a {
   width: 12rem;
   cursor: pointer;
@@ -181,7 +185,7 @@ html {
   margin-right: auto;
   position: relative;
   text-align: center;
-  top: -12rem;
+  top: -8rem;
   color: #8f90a6;
 }
 
@@ -541,25 +545,66 @@ html {
     cursor: pointer;
   }
 
+  .mobile-menu-btn {
+    display: inline-block;
+    z-index: 999;
+    padding: 0px 10px;
+    font-size: 2rem;
+    color: #ffffff;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .close-outline {
+    display: none;
+  }
+
   .links ul {
-    /* display: flex; */
-    visibility: hidden;
-    /* flex-direction: column; */
-  }
-
-  .links {
-    width: 0;
-  }
-
-  /* .links ul {
+    z-index: 99;
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(50px);
     display: flex;
-    justify-content: space-around;
-    padding-top: 2px;
-  } */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .links .active {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .active .mobile-nav-icons {
+    display: none;
+    z-index: 9999;
+    color: #000000;
+  }
+
+  .active .close-outline {
+    margin-top: -12px;
+    display: inline-block;
+    z-index: 9999999;
+  }
+
+  .links ul li {
+    margin-bottom: 2rem;
+  }
+
+  .links ul li a {
+    color: #000000;
+    font-size: larger;
+  }
 
   .reg-btn {
     position: relative;
     top: 0;
+    margin-right: 1rem;
   }
 
   .reg-btn a button {
@@ -626,7 +671,7 @@ html {
     padding: 2rem 2rem;
     position: relative;
     top: -2rem;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .t-1,
@@ -654,7 +699,7 @@ html {
   }
 
   .t-1 {
-    margin-bottom: 0;
+    margin-bottom: 1.4rem;
   }
 
   .petcare {
