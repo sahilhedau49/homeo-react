@@ -69,7 +69,7 @@ const Mainpage = () => {
       </Fade>
 
       <Fade bottom>
-        <section id="services petcare">
+        <section id="petcare">
           <div className="petcare">
             <div className="pc-img1">
               <img
