@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../App.css";
 import Fade from "react-reveal/Fade";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { Link } from "react-router-dom";
+import Registration from "./Registration";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -20,7 +22,7 @@ const Header = () => {
             <ul className={openMenu ? "active" : ""}>
               {/* Active */}
               <li>
-                <a href="#" onClick={() => setOpenMenu(false)}>
+                <a href="/" onClick={() => setOpenMenu(false)}>
                   Home
                 </a>
               </li>
@@ -42,14 +44,13 @@ const Header = () => {
             </ul>
           </div>
           <div className="reg-btn">
-            <a href="#">
+            <Link to="/registration">
               <button>Registration</button>
-            </a>
+            </Link>
           </div>
           <div
             className={openMenu ? "mobile-menu-btn active" : "mobile-menu-btn"}
           >
-            {/* Active */}
             <CgMenu
               name="menu-outline"
               className="mobile-nav-icons"
@@ -86,7 +87,9 @@ const Header = () => {
                 placeholder="Search for Service ..."
                 name="search"
               />
-              <i className="bars fa-solid fa-bars"></i>
+              <Link to="/registration">
+                <i className="bars fa-solid fa-bars"></i>
+              </Link>
             </div>
           </div>
         </Fade>

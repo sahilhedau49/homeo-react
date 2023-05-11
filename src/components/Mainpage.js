@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.css";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 
 const Mainpage = () => {
   return (
@@ -10,45 +11,57 @@ const Mainpage = () => {
           <div className="types">
             <div className="t-1">
               <div>
-                <img src={require("../images/mdi_pets.png")} alt="image" />
-                <p>Pet Caretaker</p>
+                <a href="#petcare">
+                  <img src={require("../images/mdi_pets.png")} alt="image" />
+                  <p>Pet Caretaker</p>
+                </a>
               </div>
               <div>
-                <img
-                  src={require("../images/material-symbols_cleaning-bucket-rounded.png")}
-                  alt="image"
-                />
-                <p>Washing</p>
+                <a href="#washing">
+                  <img
+                    src={require("../images/material-symbols_cleaning-bucket-rounded.png")}
+                    alt="image"
+                  />
+                  <p>Washing</p>
+                </a>
               </div>
               <div>
-                <img
-                  src={require("../images/material-symbols_cleaning-services-rounded.png")}
-                  alt="image"
-                />
-                <p>Cleaning</p>
+                <a href="#cleaning">
+                  <img
+                    src={require("../images/material-symbols_cleaning-services-rounded.png")}
+                    alt="image"
+                  />
+                  <p>Cleaning</p>
+                </a>
               </div>
             </div>
             <div className="t-2">
               <div>
-                <img
-                  src={require("../images/mdi_washing-machine.png")}
-                  alt="image"
-                />
-                <p>Laundry</p>
+                <a href="#laundry">
+                  <img
+                    src={require("../images/mdi_washing-machine.png")}
+                    alt="image"
+                  />
+                  <p>Laundry</p>
+                </a>
               </div>
               <div>
-                <img
-                  src={require("../images/icon-park-solid_cooking.png")}
-                  alt="image"
-                />
-                <p>Cooking</p>
+                <a href="#cooking">
+                  <img
+                    src={require("../images/icon-park-solid_cooking.png")}
+                    alt="image"
+                  />
+                  <p>Cooking</p>
+                </a>
               </div>
               <div>
-                <img
-                  src={require("../images/ic_round-elderly.png")}
-                  alt="image"
-                />
-                <p>Elder Caretaking</p>
+                <a href="#eldercare">
+                  <img
+                    src={require("../images/ic_round-elderly.png")}
+                    alt="image"
+                  />
+                  <p>Elder Caretaking</p>
+                </a>
               </div>
             </div>
           </div>
@@ -56,7 +69,7 @@ const Mainpage = () => {
       </Fade>
 
       <Fade bottom>
-        <section id="services">
+        <section id="services petcare">
           <div className="petcare">
             <div className="pc-img1">
               <img
@@ -71,9 +84,9 @@ const Mainpage = () => {
                 caretaker today!
               </p>
               <div className="reg-btn book-btn">
-                <a href="#">
+                <Link to="/registration">
                   <button>Book Now</button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="pc-img2">
@@ -92,7 +105,7 @@ const Mainpage = () => {
       />
 
       <Fade bottom>
-        <section>
+        <section id="laundry">
           <div className="laundry">
             <div className="ld-txt">
               <h3>Laundry Services</h3>
@@ -101,9 +114,9 @@ const Mainpage = () => {
                 important things in life.
               </p>
               <div className="reg-btn book-btn">
-                <a href="#">
+                <Link to="/registration">
                   <button>Book Now</button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="ld-img1">
@@ -120,7 +133,7 @@ const Mainpage = () => {
         <img src={require("../images/Group 996 (1).png")} alt="Boy with dogs" />
       </div>
       <Fade bottom>
-        <section>
+        <section id="eldercare">
           <div className="eldercare">
             <span className="Blank"></span>
             <div className="ec-txt">
@@ -131,9 +144,9 @@ const Mainpage = () => {
                 daily activities or medical needs.
               </p>
               <div className="reg-btn book-btn">
-                <a href="#">
+                <Link to="/registration">
                   <button>Book Now</button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="ec-img2">
@@ -147,7 +160,7 @@ const Mainpage = () => {
       </Fade>
 
       <Fade bottom>
-        <section>
+        <section id="washing">
           <div className="washing">
             <div className="whtop">
               <div className="wh-img1">
@@ -163,9 +176,9 @@ const Mainpage = () => {
               </div>
             </div>
             <div className="reg-btn book-btn wh-btn">
-              <a href="#">
+              <Link to="/registration">
                 <button>Book Now</button>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -177,7 +190,7 @@ const Mainpage = () => {
       />
 
       <Fade bottom>
-        <section>
+        <section id="cleaning">
           <div className="cleaning">
             <div className="cl-img1">
               <img
@@ -194,9 +207,9 @@ const Mainpage = () => {
                 solutions for homes, offices, and commercial spaces.
               </p>
               <div className="reg-btn book-btn">
-                <a href="#">
+                <Link to="/registration">
                   <button>Book Now</button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="cl-img2">
@@ -213,7 +226,7 @@ const Mainpage = () => {
         <img src={require("../images/Group 998.png")} alt="Boy with dogs" />
       </div>
       <Fade bottom>
-        <section>
+        <section id="cooking">
           <div className="cooking">
             <span className="Blank2"></span>
             <div className="ck-txt">
@@ -223,9 +236,9 @@ const Mainpage = () => {
                 trust us to bring flavor to their table.
               </p>
               <div className="reg-btn book-btn">
-                <a href="#">
+                <Link to="/registration">
                   <button>Book Now</button>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="ck-img2">
@@ -259,7 +272,12 @@ const Mainpage = () => {
                 <i className="fa-brands fa-square-twitter"></i>
                 <i className="fa-brands fa-linkedin"></i>
                 <i className="fa-brands fa-square-facebook"></i>
-                <i className="fa-brands fa-square-instagram"></i>
+                <a
+                  href="https://instagram.com/_homeo_for_you?igshid=YmMyMTA2M2Y="
+                  target="_blank"
+                >
+                  <i className="fa-brands fa-square-instagram"></i>
+                </a>
               </div>
             </div>
             <div className="services">

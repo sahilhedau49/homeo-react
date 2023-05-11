@@ -502,6 +502,11 @@ html {
   justify-content: space-around;
 }
 
+.soc-lnk a {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .services h3,
 .trust h3,
 .contact h3,
@@ -688,7 +693,7 @@ html {
 
   .t-1 div img,
   .t-2 div img {
-    width: 2.4rem;
+    width: 2rem;
     margin-bottom: 2rem;
   }
 
