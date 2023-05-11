@@ -317,7 +317,6 @@ html {
   height: max-content;
   margin: auto;
   font-weight: 300;
-  font-size: 2rem;
   color: #6b7478;
   position: relative;
   left: 4rem;
@@ -343,6 +342,7 @@ html {
 .ec-txt p {
   width: 60%;
   margin: auto;
+  font-size: 2rem;
 }
 
 .washing {
@@ -536,7 +536,6 @@ html {
   .navbar {
     display: flex;
     width: 100vw;
-    /* flex-direction: column; */
     padding: 16px 1rem;
   }
 
@@ -720,7 +719,6 @@ html {
 
   .pc-img2 img {
     width: 0rem;
-    /* visibility: hidden; */
   }
 
   .pc-txt {
