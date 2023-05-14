@@ -1,0 +1,82 @@
+* {
+  font-family: "Poppins";
+}
+
+section {
+  width: 100vw;
+  height: 150vh;
+  background: url(/src/images/registration-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 2rem;
+  background: rgba(0, 0, 0, 0.03);
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid #222;
+}
+
+label {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+h2,
+.form {
+  color: #41113a;
+}
+
+.form {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.2);
+}
+
+input::placeholder {
+  color: #41113a;
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+input:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #41113a;
+  background: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn {
+  display: block;
+  margin-top: 3rem;
+  padding: 5px 40px;
+  background: #5a33e5;
+  font-weight: 400;
+  font-size: 1.12rem;
+  border-radius: 8px;
+  color: #ffffff;
+  border: 2px solid #5a33e5;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn:hover {
+  border: 2px solid #3700ff;
+  background: transparent;
+  color: #2a00c4;
+}
+
+span {
+  font-weight: normal;
+}
