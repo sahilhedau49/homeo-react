@@ -69,6 +69,12 @@
 .reg-sec span {
   font-weight: normal;
 }
+.popup-wrapper {
+  background-color: rgba(189, 189, 189, 0.9);
+}
+.pop-sec {
+  box-shadow: 0px 0px 100px #8f90a6;
+}
 
 @media screen and (max-width: 900px) {
   .reg-sec {
@@ -100,5 +106,10 @@
   }
   .reg-sec span {
     font-weight: lighter;
+  }
+  .pop-sec {
+    width: 90vw;
+    padding: 2rem 1rem;
+    text-align: center;
   }
 }

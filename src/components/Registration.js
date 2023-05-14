@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Registration.css";
+import { useNavigate } from "react-router-dom";
+import PopUp from "./PopUp";
 
 const Registration = () => {
+  const [popup, setPopup] = useState(false);
+
   return (
     <section className="reg-sec p-24">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
@@ -79,9 +83,10 @@ const Registration = () => {
             <br />
             <input type="number" placeholder="Pin Code" required></input>
           </div>
-          <button type="submit" className="btn">
+          <button type="submit" className="btn" onClick={() => setPopup(true)}>
             Register
           </button>
+          {popup && <PopUp />}
         </form>
       </div>
     </section>

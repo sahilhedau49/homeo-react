@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Mainpage from "./components/Mainpage";
 import Registration from "./components/Registration";
+import PopUp from "./components/PopUp";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={[<Header />, <Mainpage />]} />
           <Route path="/registration" element={<Registration />} />
+          <Route path="/tohome" element={<PopUp />} />
         </Routes>
       </BrowserRouter>
     </div>
