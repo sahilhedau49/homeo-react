@@ -2,16 +2,16 @@
   font-family: "Poppins";
 }
 
-section {
-  width: 100vw;
+.reg-sec {
+  width: 100%;
   height: 150vh;
   background: url(/src/images/registration-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-input,
-select {
+.reg-sec input,
+.reg-sec select {
   width: 100%;
   padding: 10px 2rem;
   background: rgba(0, 0, 0, 0.03);
@@ -20,18 +20,18 @@ select {
   border-radius: 10px;
 }
 
-input:focus,
-select:focus {
+.reg-sec input:focus,
+.reg-sec select:focus {
   border: 1px solid #222;
 }
 
-label {
+.reg-sec label {
   margin-top: 2rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-h2,
+.reg-sec h2,
 .form {
   color: #41113a;
 }
@@ -41,21 +41,21 @@ h2,
   box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.2);
 }
 
-input::placeholder {
+.reg-sec input::placeholder {
   color: #41113a;
   font-size: 1rem;
   font-weight: normal;
   opacity: 0.8;
 }
 
-input:-webkit-autofill,
-select:-webkit-autofill {
+.reg-sec input:-webkit-autofill,
+.reg-sec select:-webkit-autofill {
   -webkit-text-fill-color: #41113a;
   background: transparent;
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.btn {
+.reg-sec .btn {
   display: block;
   margin-top: 3rem;
   padding: 5px 40px;
@@ -71,12 +71,12 @@ select:-webkit-autofill {
   margin-right: auto;
 }
 
-.btn:hover {
+.reg-sec .btn:hover {
   border: 2px solid #3700ff;
   background: transparent;
   color: #2a00c4;
 }
 
-span {
+.reg-sec span {
   font-weight: normal;
 }

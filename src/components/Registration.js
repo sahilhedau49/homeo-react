@@ -3,9 +3,9 @@ import "./Registration.css";
 
 const Registration = () => {
   return (
-    <section className="p-24">
-      <div className="form w-[60%] mx-auto text-lg backdrop-blur-3xl py-24 px-32 rounded-3xl ">
-        <h2 className="text-center text-2xl font-bold ">Registartion Form</h2>
+    <section className="reg-sec p-24">
+      <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
+        <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
         <form>
           <div className="full-name mt-4">
             <label>
