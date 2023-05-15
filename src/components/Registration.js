@@ -13,12 +13,16 @@ const Registration = () => {
     address: "",
     pincode: "",
   };
-  
+
   const [formValues, setFormValues] = useState(initialValues);
 
-  function submitFun() {
-    document.getElementById("mainform").submit();
-  }
+  // function submitFun() {
+  //   document.getElementById("mainform").submit();
+  // }
+
+  // const handlePopup = () => {
+  //   setPopup(true);
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -172,7 +176,7 @@ const Registration = () => {
             id="submit"
             className="btn"
             disabled
-            onsubmit={() => setPopup(true)}                   // Error here
+            onClick={() => setPopup(true)} // Error here
           >
             Register
           </button>
