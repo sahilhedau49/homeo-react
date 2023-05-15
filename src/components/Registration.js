@@ -12,15 +12,18 @@ const Registration = () => {
     phonenumber: "",
     address: "",
     pincode: "",
+    dob: "",
+    gender: "",
   };
+
+  // const [finalValues, setFinalValues] = useState(initialValues);
 
   const [formValues, setFormValues] = useState(initialValues);
 
-  // function submitFun() {
-  //   document.getElementById("mainform").submit();
-  // }
-
-  const handlePopup = () => {
+  const handleSubmit = (event) => {
+    // setFinalValues({ ...formValues });
+    // console.log(finalValues);
+    event.preventDefault();
     setPopup(true);
   };
 
@@ -31,23 +34,24 @@ const Registration = () => {
   };
 
   if (
-    formValues.fullname === "" ||
-    formValues.email === "" ||
-    formValues.password === "" ||
-    formValues.phonenumber === "" ||
-    formValues.address === "" ||
-    formValues.pincode === ""
+    !(
+      formValues.fullname === "" ||
+      formValues.email === "" ||
+      formValues.password === "" ||
+      formValues.phonenumber === "" ||
+      formValues.address === "" ||
+      formValues.pincode === ""
+    )
   ) {
-    console.log("All feilds are not filled.");
-  } else {
     document.getElementById("submit").removeAttribute("disabled");
+    document.getElementById("errorMessage").innerText = "";
   }
 
   return (
     <section className="reg-sec p-24 mb-36">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
-        <form id="mainform" action="" onSubmit={handlePopup} name="mainform">
+        <form id="mainform" action="" onSubmit={handleSubmit} name="mainform">
           <div className="full-name mt-4">
             <label>
               Full Name <span>*</span>
@@ -86,26 +90,13 @@ const Registration = () => {
             <input
               id="input-3"
               type="password"
-              placeholder="Set Password"
+              placeholder="Create Password"
               name="password"
               value={formValues.password}
               onChange={handleChange}
               required
             ></input>
           </div>
-          {/* <div className="confirm-password mt-4">
-            <label>
-              Confirm Password <span>*</span>
-            </label>
-            <br />
-            <input
-              id="input-4"
-              type="password"
-              placeholder="Confirm Password"
-              name="confirm-password"
-              required
-            ></input>
-          </div> */}
           <div className="dob mt-4">
             <label>Date of Birth</label>
             <br />
@@ -113,13 +104,15 @@ const Registration = () => {
               id="input-5"
               type="date"
               placeholder="Date of Birth"
+              value={formValues.dob}
+              onChange={handleChange}
               name="dob"
             ></input>
           </div>
           <div className="gender mt-4">
             <label>Gender</label>
             <br />
-            <select id="gender" placeholder="Gender">
+            <select name="gender" id="gender" placeholder="Gender">
               <option>Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -171,16 +164,10 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <button
-            type="submit"
-            id="submit"
-            className="btn"
-            disabled
-            // onClick={() => setPopup(true)} // Error here
-          >
+          <button type="submit" id="submit" className="btn" disabled>
             Register
           </button>
-          <h4 id="errorMessage" className="text-center pt-2 text-gray-800">
+          <h4 id="errorMessage" className="text-center pt-2 text-red-800">
             Fill all above data.
           </h4>
           {popup && <PopUp />}
