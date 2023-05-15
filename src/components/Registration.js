@@ -20,9 +20,9 @@ const Registration = () => {
   //   document.getElementById("mainform").submit();
   // }
 
-  // const handlePopup = () => {
-  //   setPopup(true);
-  // };
+  const handlePopup = () => {
+    setPopup(true);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -47,7 +47,7 @@ const Registration = () => {
     <section className="reg-sec p-24 mb-36">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
-        <form id="mainform" action="" name="mainform">
+        <form id="mainform" action="" onSubmit={handlePopup} name="mainform">
           <div className="full-name mt-4">
             <label>
               Full Name <span>*</span>
@@ -176,7 +176,7 @@ const Registration = () => {
             id="submit"
             className="btn"
             disabled
-            onClick={() => setPopup(true)} // Error here
+            // onClick={() => setPopup(true)} // Error here
           >
             Register
           </button>
