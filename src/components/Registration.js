@@ -1,43 +1,49 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import { useNavigate } from "react-router-dom";
 import PopUp from "./PopUp";
-
-// const submitBtn = document.getElementById("submit");
-// const input1 = document.getElementById("input-1").value;
-// const input2 = document.getElementById("input-2");
-// const input3 = document.getElementById("input-3");
-// const input4 = document.getElementById("input-4");
-// const input5 = document.getElementById("input-5");
-// const input6 = document.getElementById("input-6");
-// const input7 = document.getElementById("input-7");
-// const input8 = document.getElementById("input-8");
-
-// console.log(input1);
 
 const Registration = () => {
   const [popup, setPopup] = useState(false);
 
-  // function checkform() {
-  //   var f = document.forms["mainform"].input;
-  //   var feildsMustBeFilled = true;
+  const initialValues = {
+    fullname: "",
+    email: "",
+    password: "",
+    phonenumber: "",
+    address: "",
+    pincode: "",
+  };
+  
+  const [formValues, setFormValues] = useState(initialValues);
 
-  //   for (let i = 0; i < f.length; i++) {
-  //     if (f[i].value.length == 0) feildsMustBeFilled = false;
-  //   }
+  function submitFun() {
+    document.getElementById("mainform").submit();
+  }
 
-  //   if (feildsMustBeFilled) {
-  //     document.getElementById("submit").disabled = false;
-  //   } else {
-  //     document.getElementById("submit").disabled = true;
-  //   }
-  // }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    console.log(formValues);
+  };
+
+  if (
+    formValues.fullname === "" ||
+    formValues.email === "" ||
+    formValues.password === "" ||
+    formValues.phonenumber === "" ||
+    formValues.address === "" ||
+    formValues.pincode === ""
+  ) {
+    console.log("All feilds are not filled.");
+  } else {
+    document.getElementById("submit").removeAttribute("disabled");
+  }
 
   return (
     <section className="reg-sec p-24 mb-36">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
-        <form action="" name="mainform">
+        <form id="mainform" action="" name="mainform">
           <div className="full-name mt-4">
             <label>
               Full Name <span>*</span>
@@ -48,7 +54,8 @@ const Registration = () => {
               type="text"
               placeholder="Full Name"
               name="fullname"
-              // onKeyUp={checkform()}
+              value={formValues.fullname}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -62,7 +69,8 @@ const Registration = () => {
               type="email"
               placeholder="Email Address"
               name="email"
-              // onKeyUp={checkform()}
+              value={formValues.email}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -76,7 +84,8 @@ const Registration = () => {
               type="password"
               placeholder="Set Password"
               name="password"
-              // onKeyUp={checkform()}
+              value={formValues.password}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -90,28 +99,21 @@ const Registration = () => {
               type="password"
               placeholder="Confirm Password"
               name="confirm-password"
-              // onKeyUp={checkform()}
               required
             ></input>
           </div> */}
           <div className="dob mt-4">
-            <label>
-              Date of Birth <span>*</span>
-            </label>
+            <label>Date of Birth</label>
             <br />
             <input
               id="input-5"
               type="date"
               placeholder="Date of Birth"
               name="dob"
-              // onKeyUp={checkform()}
-              required
             ></input>
           </div>
           <div className="gender mt-4">
-            <label>
-              Gender <span>*</span>
-            </label>
+            <label>Gender</label>
             <br />
             <select id="gender" placeholder="Gender">
               <option>Select</option>
@@ -130,7 +132,8 @@ const Registration = () => {
               type="number"
               placeholder="Phone Number"
               name="phonenumber"
-              // onKeyUp={checkform()}
+              value={formValues.phonenumber}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -144,7 +147,8 @@ const Registration = () => {
               type="text"
               placeholder="Address"
               name="address"
-              // onKeyUp={checkform()}
+              value={formValues.address}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -158,7 +162,8 @@ const Registration = () => {
               type="number"
               placeholder="Pin Code"
               name="pincode"
-              // onKeyUp={checkform()}
+              value={formValues.pincode}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -166,11 +171,14 @@ const Registration = () => {
             type="submit"
             id="submit"
             className="btn"
-            // disabled
-            onClick={() => setPopup(true)}
+            disabled
+            onsubmit={() => setPopup(true)}                   // Error here
           >
             Register
           </button>
+          <h4 id="errorMessage" className="text-center pt-2 text-gray-800">
+            Fill all above data.
+          </h4>
           {popup && <PopUp />}
         </form>
       </div>
