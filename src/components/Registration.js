@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,Component } from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
 const Registration = () => {
   const [popup, setPopup] = useState(false);
-
   const initialValues = {
     fullname: "",
     email: "",
@@ -30,8 +29,21 @@ const Registration = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(formValues);
+    console.log(e);
   };
+  const senddata= async (e)=>{
+    e.preventDefault();
+    const {fullname,email,password,phonenumber,address,pincode}=formValues;
+    const res=await fetch("http://localhost:5000/",{
+      method:"POST",
+      headers:{
+           "Content-type":"application/json"
+      },
+      body:JSON.stringify({
+        fullname,email,password,phonenumber,address,pincode
+      })
+    })
+  }
 
   if (
     !(
@@ -63,7 +75,7 @@ const Registration = () => {
               placeholder="Full Name"
               name="fullname"
               value={formValues.fullname}
-              onChange={handleChange}
+              onChange={{handleChange}}
               required
             ></input>
           </div>
@@ -164,7 +176,7 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <button type="submit" id="submit" className="btn" disabled>
+          <button type="submit" id="submit" className="btn" disabled onClick={senddata}>
             Register
           </button>
           <h4 id="errorMessage" className="text-center pt-2 text-red-800">
