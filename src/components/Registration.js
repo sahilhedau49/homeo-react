@@ -43,23 +43,26 @@ const Registration = () => {
         fullname,email,password,phonenumber,address,pincode,dob,gender
       })
     });
+    if (
+      (
+        formValues.fullname === "" ||
+        formValues.email === "" ||
+        formValues.password === "" ||
+        formValues.phonenumber === "" ||
+        formValues.address === "" ||
+        formValues.pincode === ""
+      )
+    ){
+      window.alert("plzz fill out the form")
+      return
+    }
     if(res){
       window.alert("Successfull")
-    }else{
-      window.alert("Plz fill the full form")
     }
+  
   }
 
-  if (
-    !(
-      formValues.fullname === "" ||
-      formValues.email === "" ||
-      formValues.password === "" ||
-      formValues.phonenumber === "" ||
-      formValues.address === "" ||
-      formValues.pincode === ""
-    )
-  ) {
+ {
     document.getElementById("submit").removeAttribute("disabled");
     document.getElementById("errorMessage").innerText = "";
   }
