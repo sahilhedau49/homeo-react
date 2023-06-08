@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
@@ -23,7 +23,6 @@ const Registration = () => {
     // setFinalValues({ ...formValues });
     // console.log(finalValues);
     event.preventDefault();
-    setPopup(true);
   };
 
   const handleChange = (e) => {
@@ -31,43 +30,65 @@ const Registration = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(e);
   };
-  const senddata= async (e)=>{
-    e.preventDefault();
-    const {fullname,email,password,phonenumber,address,pincode,dob,gender}=formValues;
-    const res=await fetch("https://homeo-4633d-default-rtdb.firebaseio.com/userdata.json",{
-      method:"POST",
-      headers:{
-           "Content-type":"application/json"
-      },
-      body:JSON.stringify({
-        fullname,email,password,phonenumber,address,pincode,dob,gender
-      })
-    });
-    if (
-      (
-        formValues.fullname === "" ||
-        formValues.email === "" ||
-        formValues.password === "" ||
-        formValues.phonenumber === "" ||
-        formValues.address === "" ||
-        formValues.pincode === ""
-      )
-    ){
-      window.alert("plzz fill out the form")
-      return
-    }
-    if(res){
-      window.alert("Successfull")
-    }
-  
-  }
 
+  const senddata = async (e) => {
+    e.preventDefault();
+    const {
+      fullname,
+      email,
+      password,
+      phonenumber,
+      address,
+      pincode,
+      dob,
+      gender,
+    } = formValues;
+    const res = await fetch(
+      "https://homeo-4633d-default-rtdb.firebaseio.com/userdata.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          fullname,
+          email,
+          password,
+          phonenumber,
+          address,
+          pincode,
+          dob,
+          gender,
+        }),
+      }
+    );
+    if (
+      formValues.fullname === "" ||
+      formValues.email === "" ||
+      formValues.password === "" ||
+      formValues.phonenumber === "" ||
+      formValues.address === "" ||
+      formValues.pincode === ""
+    ) {
+      window.alert("plzz fill out the form");
+      return;
+    }
+    if (res) {
+      setPopup(true);
+    }
+  };
 
   return (
     <section className="reg-sec p-24 mb-36">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
-        <form id="mainform" action="" onSubmit={handleSubmit} name="mainform" method="POST">
+        <form
+          id="mainform"
+          action=""
+          onSubmit={handleSubmit}
+          name="mainform"
+          method="POST"
+        >
           <div className="full-name mt-4">
             <label>
               Full Name <span>*</span>
@@ -130,9 +151,9 @@ const Registration = () => {
             <br />
             <select name="gender" id="gender" placeholder="Gender">
               <option>Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="prefer-not-to-say">Prefer not to say</option>
+              <option value={formValues.gender} onChange={handleChange}>Male</option>
+              <option value={formValues.gender}  onChange={handleChange}>Female</option>
+              <option value={formValues.gender} onChange={handleChange}>Prefer not to say</option>
             </select>
           </div>
           <div className="phone-no mt-4">
@@ -180,7 +201,7 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <button type="submit" id="submit" className="btn"  onClick={senddata} >
+          <button type="submit" id="submit" className="btn" onClick={senddata}>
             Register
           </button>
           <h4 id="errorMessage" className="text-center pt-2 text-red-800">
