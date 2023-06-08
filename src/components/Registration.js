@@ -1,4 +1,4 @@
-import React, { useState,Component } from "react";
+import React, { useState} from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
@@ -33,16 +33,21 @@ const Registration = () => {
   };
   const senddata= async (e)=>{
     e.preventDefault();
-    const {fullname,email,password,phonenumber,address,pincode}=formValues;
-    const res=await fetch("http://localhost:5000/",{
+    const {fullname,email,password,phonenumber,address,pincode,dob,gender}=formValues;
+    const res=await fetch("https://homeo-4633d-default-rtdb.firebaseio.com/userdata.json",{
       method:"POST",
       headers:{
            "Content-type":"application/json"
       },
       body:JSON.stringify({
-        fullname,email,password,phonenumber,address,pincode
+        fullname,email,password,phonenumber,address,pincode,dob,gender
       })
-    })
+    });
+    if(res){
+      window.alert("Successfull")
+    }else{
+      window.alert("Plz fill the full form")
+    }
   }
 
   if (
@@ -63,7 +68,7 @@ const Registration = () => {
     <section className="reg-sec p-24 mb-36">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
-        <form id="mainform" action="" onSubmit={handleSubmit} name="mainform">
+        <form id="mainform" action="" onSubmit={handleSubmit} name="mainform" method="POST">
           <div className="full-name mt-4">
             <label>
               Full Name <span>*</span>
@@ -75,7 +80,7 @@ const Registration = () => {
               placeholder="Full Name"
               name="fullname"
               value={formValues.fullname}
-              onChange={{handleChange}}
+              onChange={handleChange}
               required
             ></input>
           </div>
@@ -176,7 +181,7 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <button type="submit" id="submit" className="btn" disabled onClick={senddata}>
+          <button type="submit" id="submit" className="btn"  onClick={senddata} >
             Register
           </button>
           <h4 id="errorMessage" className="text-center pt-2 text-red-800">
