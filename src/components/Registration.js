@@ -50,9 +50,7 @@ const Registration = () => {
         formValues.password === "" ||
         formValues.phonenumber === "" ||
         formValues.address === "" ||
-        formValues.pincode === ""||
-        formValues.dob === "" ||
-        formValues.gender === ""
+        formValues.pincode === ""
       )
     ){
       window.alert("plzz fill out the form")
