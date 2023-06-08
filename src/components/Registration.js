@@ -130,9 +130,9 @@ const Registration = () => {
             <br />
             <select name="gender" id="gender" placeholder="Gender">
               <option>Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="prefer-not-to-say">Prefer not to say</option>
+              <option value={formValues.gender} onChange={handleChange}>Male</option>
+              <option value={formValues.gender}  onChange={handleChange}>Female</option>
+              <option value={formValues.gender} onChange={handleChange}>Prefer not to say</option>
             </select>
           </div>
           <div className="phone-no mt-4">
