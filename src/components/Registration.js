@@ -50,7 +50,9 @@ const Registration = () => {
         formValues.password === "" ||
         formValues.phonenumber === "" ||
         formValues.address === "" ||
-        formValues.pincode === ""
+        formValues.pincode === ""||
+        formValues.dob === "" ||
+        formValues.gender === ""
       )
     ){
       window.alert("plzz fill out the form")
@@ -62,10 +64,6 @@ const Registration = () => {
   
   }
 
- {
-    document.getElementById("submit").removeAttribute("disabled");
-    document.getElementById("errorMessage").innerText = "";
-  }
 
   return (
     <section className="reg-sec p-24 mb-36">
