@@ -30,6 +30,10 @@ const Registration = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(e);
   };
+  const setvalue=()=>{
+    var selected=document.getElementById("list").value;
+    console.log(selected);
+  }
 
   const senddata = async (e) => {
     e.preventDefault();
@@ -149,11 +153,11 @@ const Registration = () => {
           <div className="gender mt-4">
             <label>Gender</label>
             <br />
-            <select name="gender" id="gender" placeholder="Gender">
+            <select name="gender" id="gender" value={formValues.gender} placeholder="Gender">
               <option>Select</option>
-              <option value={formValues.gender} onChange={handleChange}>Male</option>
-              <option value={formValues.gender}  onChange={handleChange}>Female</option>
-              <option value={formValues.gender} onChange={handleChange}>Prefer not to say</option>
+              <option value="Male"onChange={handleChange}>Male</option>
+              <option value="Female"  onChange={handleChange}>Female</option>
+              <option value="Prefer Not to say" onChange={handleChange}>Prefer not to say</option>
             </select>
           </div>
           <div className="phone-no mt-4">
