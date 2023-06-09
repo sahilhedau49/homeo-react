@@ -71,7 +71,7 @@ const Registration = () => {
       formValues.address === "" ||
       formValues.pincode === ""
     ) {
-      window.alert("Please fill all mandatory feilds (*).");
+      window.alert("Please fill all mandatory fields (*).");
       return;
     }
     if (res) {
