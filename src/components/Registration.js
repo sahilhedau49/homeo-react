@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
 const Registration = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
   const [popup, setPopup] = useState(false);
   const initialValues = {
     fullname: "",
@@ -70,7 +71,7 @@ const Registration = () => {
       formValues.address === "" ||
       formValues.pincode === ""
     ) {
-      window.alert("plzz fill out the form");
+      window.alert("Please fill all mandatory feilds (*).");
       return;
     }
     if (res) {
@@ -151,9 +152,15 @@ const Registration = () => {
             <br />
             <select name="gender" id="gender" placeholder="Gender">
               <option>Select</option>
-              <option value={formValues.gender} onChange={handleChange}>Male</option>
-              <option value={formValues.gender}  onChange={handleChange}>Female</option>
-              <option value={formValues.gender} onChange={handleChange}>Prefer not to say</option>
+              <option value={formValues.gender} onChange={handleChange}>
+                Male
+              </option>
+              <option value={formValues.gender} onChange={handleChange}>
+                Female
+              </option>
+              <option value={formValues.gender} onChange={handleChange}>
+                Prefer not to say
+              </option>
             </select>
           </div>
           <div className="phone-no mt-4">
@@ -204,9 +211,9 @@ const Registration = () => {
           <button type="submit" id="submit" className="btn" onClick={senddata}>
             Register
           </button>
-          <h4 id="errorMessage" className="text-center pt-2 text-red-800">
+          {/* <h4 id="errorMessage" className="text-center pt-2 text-red-800">
             Fill all above data.
-          </h4>
+          </h4> */}
           {popup && <PopUp />}
         </form>
       </div>
