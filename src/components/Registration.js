@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
 const Registration = () => {
-  useEffect(() => window.scrollTo(0, 0), []);
   const [popup, setPopup] = useState(false);
   const initialValues = {
     fullname: "",
@@ -31,10 +30,10 @@ const Registration = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(e);
   };
-  const setvalue=()=>{
-    var selected=document.getElementById("list").value;
-    console.log(selected);
-  }
+  // const setvalue=()=>{
+  //   var selected=document.getElementById("list").value;
+  //   console.log(selected);
+  // }
 
   const senddata = async (e) => {
     e.preventDefault();
@@ -46,10 +45,10 @@ const Registration = () => {
       address,
       pincode,
       dob,
-      gender,
     } = formValues;
+    if( fullname && email && password &&  phonenumber && address &&   pincode && dob ){
     const res = await fetch(
-      "https://homeo-4633d-default-rtdb.firebaseio.com/userdata.json",
+      "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
       {
         method: "POST",
         headers: {
@@ -63,24 +62,15 @@ const Registration = () => {
           address,
           pincode,
           dob,
-          gender,
         }),
       }
     );
-    if (
-      formValues.fullname === "" ||
-      formValues.email === "" ||
-      formValues.password === "" ||
-      formValues.phonenumber === "" ||
-      formValues.address === "" ||
-      formValues.pincode === ""
-    ) {
-      window.alert("Please fill all mandatory fields (*).");
-      return;
-    }
-    if (res) {
+    if(res) {
       setPopup(true);
     }
+  }else{
+    window.alert("Please fill out the form");
+  }
   };
 
   return (
@@ -156,28 +146,16 @@ const Registration = () => {
             <br />
             <select name="gender" id="gender" value={formValues.gender} placeholder="Gender">
               <option>Select</option>
-<<<<<<< HEAD
-              <option value="Male"onChange={handleChange}>Male</option>
+              <option value="Male"   onChange={handleChange}>Male</option>
               <option value="Female"  onChange={handleChange}>Female</option>
               <option value="Prefer Not to say" onChange={handleChange}>Prefer not to say</option>
-=======
-              <option value={formValues.gender} onChange={handleChange}>
-                Male
-              </option>
-              <option value={formValues.gender} onChange={handleChange}>
-                Female
-              </option>
-              <option value={formValues.gender} onChange={handleChange}>
-                Prefer not to say
-              </option>
->>>>>>> a4877517915480ee2cbbbfd2dcf761846ed9a461
             </select>
           </div>
           <div className="phone-no mt-4">
             <label>
               Phone Number <span>*</span>
             </label>
-            <br />
+            <br/>
             <input
               id="input-6"
               type="number"
@@ -221,9 +199,9 @@ const Registration = () => {
           <button type="submit" id="submit" className="btn" onClick={senddata}>
             Register
           </button>
-          {/* <h4 id="errorMessage" className="text-center pt-2 text-red-800">
+          <h4 id="errorMessage" className="text-center pt-2 text-red-800">
             Fill all above data.
-          </h4> */}
+          </h4>
           {popup && <PopUp />}
         </form>
       </div>
