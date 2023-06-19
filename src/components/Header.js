@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 import Fade from "react-reveal/Fade";
 import { CgMenu, CgClose } from "react-icons/cg";
@@ -7,7 +7,7 @@ import Registration from "./Registration";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
+  useEffect(() => window.scrollTo(0, 0), []);
   return (
     <div>
       <nav>

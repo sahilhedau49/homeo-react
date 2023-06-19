@@ -30,6 +30,10 @@ const Registration = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(e);
   };
+  // const setvalue=()=>{
+  //   var selected=document.getElementById("list").value;
+  //   console.log(selected);
+  // }
 
   const senddata = async (e) => {
     e.preventDefault();
@@ -41,10 +45,10 @@ const Registration = () => {
       address,
       pincode,
       dob,
-      gender,
     } = formValues;
+    if( fullname && email && password &&  phonenumber && address &&   pincode && dob ){
     const res = await fetch(
-      "https://homeo-4633d-default-rtdb.firebaseio.com/userdata.json",
+      "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
       {
         method: "POST",
         headers: {
@@ -58,24 +62,15 @@ const Registration = () => {
           address,
           pincode,
           dob,
-          gender,
         }),
       }
     );
-    if (
-      formValues.fullname === "" ||
-      formValues.email === "" ||
-      formValues.password === "" ||
-      formValues.phonenumber === "" ||
-      formValues.address === "" ||
-      formValues.pincode === ""
-    ) {
-      window.alert("plzz fill out the form");
-      return;
-    }
-    if (res) {
+    if(res) {
       setPopup(true);
     }
+  }else{
+    window.alert("Please fill out the form");
+  }
   };
 
   return (
@@ -149,18 +144,18 @@ const Registration = () => {
           <div className="gender mt-4">
             <label>Gender</label>
             <br />
-            <select name="gender" id="gender" placeholder="Gender">
+            <select name="gender" id="gender" value={formValues.gender} placeholder="Gender">
               <option>Select</option>
-              <option value={formValues.gender} onChange={handleChange}>Male</option>
-              <option value={formValues.gender}  onChange={handleChange}>Female</option>
-              <option value={formValues.gender} onChange={handleChange}>Prefer not to say</option>
+              <option value="Male"   onChange={handleChange}>Male</option>
+              <option value="Female"  onChange={handleChange}>Female</option>
+              <option value="Prefer Not to say" onChange={handleChange}>Prefer not to say</option>
             </select>
           </div>
           <div className="phone-no mt-4">
             <label>
               Phone Number <span>*</span>
             </label>
-            <br />
+            <br/>
             <input
               id="input-6"
               type="number"
