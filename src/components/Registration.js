@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Registration.css";
 import PopUp from "./PopUp";
 
 const Registration = () => {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const [popup, setPopup] = useState(false);
   const initialValues = {
     fullname: "",
@@ -37,40 +39,33 @@ const Registration = () => {
 
   const senddata = async (e) => {
     e.preventDefault();
-    const {
-      fullname,
-      email,
-      password,
-      phonenumber,
-      address,
-      pincode,
-      dob,
-    } = formValues;
-    if( fullname && email && password &&  phonenumber && address &&   pincode && dob ){
-    const res = await fetch(
-      "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
-      {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          fullname,
-          email,
-          password,
-          phonenumber,
-          address,
-          pincode,
-          dob,
-        }),
+    const { fullname, email, password, phonenumber, address, pincode, dob } =
+      formValues;
+    if (fullname && email && password && phonenumber && address && pincode) {
+      const res = await fetch(
+        "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            fullname,
+            email,
+            password,
+            phonenumber,
+            address,
+            pincode,
+            dob,
+          }),
+        }
+      );
+      if (res) {
+        setPopup(true);
       }
-    );
-    if(res) {
-      setPopup(true);
+    } else {
+      window.alert("Please fill all mandatory fields (*)!");
     }
-  }else{
-    window.alert("Please fill out the form");
-  }
   };
 
   return (
@@ -144,18 +139,29 @@ const Registration = () => {
           <div className="gender mt-4">
             <label>Gender</label>
             <br />
-            <select name="gender" id="gender" value={formValues.gender} placeholder="Gender">
+            <select
+              name="gender"
+              id="gender"
+              value={formValues.gender}
+              placeholder="Gender"
+            >
               <option>Select</option>
-              <option value="Male"   onChange={handleChange}>Male</option>
-              <option value="Female"  onChange={handleChange}>Female</option>
-              <option value="Prefer Not to say" onChange={handleChange}>Prefer not to say</option>
+              <option value="Male" onChange={handleChange}>
+                Male
+              </option>
+              <option value="Female" onChange={handleChange}>
+                Female
+              </option>
+              <option value="Prefer Not to say" onChange={handleChange}>
+                Prefer not to say
+              </option>
             </select>
           </div>
           <div className="phone-no mt-4">
             <label>
               Phone Number <span>*</span>
             </label>
-            <br/>
+            <br />
             <input
               id="input-6"
               type="number"

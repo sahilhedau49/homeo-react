@@ -3,7 +3,6 @@ import "../App.css";
 import Fade from "react-reveal/Fade";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { Link } from "react-router-dom";
-import Registration from "./Registration";
 
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
