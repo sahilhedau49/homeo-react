@@ -9,12 +9,12 @@ const Registration = () => {
   const initialValues = {
     fullname: "",
     email: "",
-    password: "",
     phonenumber: "",
-    address: "",
     pincode: "",
-    dob: "",
-    gender: "",
+    // password: "",
+    // address: "",
+    // dob: "",
+    // gender: "",
   };
 
   // const [finalValues, setFinalValues] = useState(initialValues);
@@ -32,10 +32,6 @@ const Registration = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(e);
   };
-  // const setvalue=()=>{
-  //   var selected=document.getElementById("list").value;
-  //   console.log(selected);
-  // }
 
   const validation = () => {
     var isValid = true;
@@ -63,14 +59,14 @@ const Registration = () => {
       const {
         fullname,
         email,
-        password,
         phonenumber,
-        address,
         pincode,
-        dob,
-        gender,
+        // password,
+        // address,
+        // dob,
+        // gender,
       } = formValues;
-      if (fullname && email && password && phonenumber && address && pincode) {
+      if (fullname && email && phonenumber && pincode) {
         const res = await fetch(
           "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
           {
@@ -81,12 +77,12 @@ const Registration = () => {
             body: JSON.stringify({
               fullname,
               email,
-              password,
               phonenumber,
-              address,
               pincode,
-              gender,
-              dob,
+              // password,
+              // address,
+              // gender,
+              // dob,
             }),
           }
         );
@@ -100,7 +96,7 @@ const Registration = () => {
   };
 
   return (
-    <section className="reg-sec p-24 mb-36">
+    <section className="reg-sec p-24 ">
       <div className="form w-[60%] mx-auto text-lg bg-pink-50 py-16 px-32 rounded-3xl ">
         <h2 className="text-center text-3xl font-extrabold mb-12">Sign Up</h2>
         <form
@@ -140,7 +136,7 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <div className="password mt-4">
+          {/* <div className="password mt-4">
             <label>
               Password <span>*</span>
             </label>
@@ -154,8 +150,8 @@ const Registration = () => {
               onChange={handleChange}
               required
             ></input>
-          </div>
-          <div className="dob mt-4">
+          </div> */}
+          {/* <div className="dob mt-4">
             <label>Date of Birth</label>
             <br />
             <input
@@ -166,8 +162,8 @@ const Registration = () => {
               onChange={handleChange}
               name="dob"
             ></input>
-          </div>
-          <div className="gender mt-4">
+          </div> */}
+          {/* <div className="gender mt-4">
             <label>Gender</label>
             <br />
             <select
@@ -182,7 +178,7 @@ const Registration = () => {
               <option value="female">Female</option>
               <option value="preferNotToSay">Prefer not to say</option>
             </select>
-          </div>
+          </div> */}
           <div className="phone-no mt-4">
             <label>
               Phone Number <span>*</span>
@@ -198,7 +194,7 @@ const Registration = () => {
               required
             ></input>
           </div>
-          <div className="address mt-4">
+          {/* <div className="address mt-4">
             <label>
               Address <span>*</span>
             </label>
@@ -212,7 +208,7 @@ const Registration = () => {
               onChange={handleChange}
               required
             ></input>
-          </div>
+          </div> */}
           <div className="pin-code mt-4">
             <label>
               Pin Code <span>*</span>
