@@ -37,34 +37,65 @@ const Registration = () => {
   //   console.log(selected);
   // }
 
+  const validation = () => {
+    var isValid = true;
+    var errorMessages = "";
+    var emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!formValues.email.match(emailRegex)) {
+      errorMessages += "Invalid email address.\n";
+      isValid = false;
+    }
+    var mobileRegex = /^[789]\d{9}$/;
+    if (!formValues.phonenumber.match(mobileRegex)) {
+      errorMessages +=
+        "Mobile number must be 10 digits and start with 7, 8, or 9.\n";
+      isValid = false;
+    }
+    if (!isValid) {
+      alert(errorMessages);
+    }
+    return isValid;
+  };
+
   const senddata = async (e) => {
-    e.preventDefault();
-    const { fullname, email, password, phonenumber, address, pincode, dob } =
-      formValues;
-    if (fullname && email && password && phonenumber && address && pincode) {
-      const res = await fetch(
-        "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
-        {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            fullname,
-            email,
-            password,
-            phonenumber,
-            address,
-            pincode,
-            dob,
-          }),
+    if (validation()) {
+      e.preventDefault();
+      const {
+        fullname,
+        email,
+        password,
+        phonenumber,
+        address,
+        pincode,
+        dob,
+        gender,
+      } = formValues;
+      if (fullname && email && password && phonenumber && address && pincode) {
+        const res = await fetch(
+          "https://homeo-9f97e-default-rtdb.firebaseio.com/userdata.json",
+          {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+              fullname,
+              email,
+              password,
+              phonenumber,
+              address,
+              pincode,
+              gender,
+              dob,
+            }),
+          }
+        );
+        if (res) {
+          setPopup(true);
         }
-      );
-      if (res) {
-        setPopup(true);
+      } else {
+        window.alert("Please fill all mandatory fields (*)!");
       }
-    } else {
-      window.alert("Please fill all mandatory fields (*)!");
     }
   };
 
@@ -143,18 +174,13 @@ const Registration = () => {
               name="gender"
               id="gender"
               value={formValues.gender}
+              onChange={handleChange}
               placeholder="Gender"
             >
-              <option>Select</option>
-              <option value="Male" onChange={handleChange}>
-                Male
-              </option>
-              <option value="Female" onChange={handleChange}>
-                Female
-              </option>
-              <option value="Prefer Not to say" onChange={handleChange}>
-                Prefer not to say
-              </option>
+              <option value="none">Select</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="preferNotToSay">Prefer not to say</option>
             </select>
           </div>
           <div className="phone-no mt-4">

@@ -11,57 +11,57 @@ const Mainpage = () => {
           <div className="types">
             <div className="t-1">
               <div>
-                <a href="#petcare">
+                <Link to="/registration">
                   <img src={require("../images/mdi_pets.png")} alt="image" />
                   <p>Pet Caretaker</p>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#washing">
+                <Link to="/registration">
                   <img
                     src={require("../images/material-symbols_cleaning-bucket-rounded.png")}
                     alt="image"
                   />
                   <p>Washing</p>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#cleaning">
+                <Link to="/registration">
                   <img
                     src={require("../images/material-symbols_cleaning-services-rounded.png")}
                     alt="image"
                   />
                   <p>Cleaning</p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="t-2">
               <div>
-                <a href="#laundry">
+                <Link to="/registration">
                   <img
                     src={require("../images/mdi_washing-machine.png")}
                     alt="image"
                   />
                   <p>Laundry</p>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#cooking">
+                <Link to="/registration">
                   <img
                     src={require("../images/icon-park-solid_cooking.png")}
                     alt="image"
                   />
                   <p>Cooking</p>
-                </a>
+                </Link>
               </div>
               <div>
-                <a href="#eldercare">
+                <Link to="/registration">
                   <img
                     src={require("../images/ic_round-elderly.png")}
                     alt="image"
                   />
                   <p>Elder Caretaking</p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
